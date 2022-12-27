@@ -1,10 +1,14 @@
 import { GetServerSideProps } from 'next';
+import { useEffect } from 'react';
 
 type Params = {
   hostname: string;
 };
 
 export default function test({ hostname }: Params) {
+  useEffect(() => {
+    console.log(window.isSecureContext);
+  }, []);
   return (
     <div>
       <p>deploy testing success</p>
